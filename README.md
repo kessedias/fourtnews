@@ -1,4 +1,4 @@
-<h1>Bem vindo ao 4News 📰</h1>
+<h1>Bem vindo ao 4TNews 📰</h1>
 <p>
 </p>
 
