@@ -1,0 +1,25 @@
+<XMLDB 
+    PATH="local/fourtnews/db" 
+    VERSION="2020030800" 
+    COMMENT="XMLDB file for Moodle local/fourtnews"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+
+  <TABLES>
+    <TABLE NAME="fourtnews_list" COMMENT="Listagem de notícias">
+        <FIELDS>
+            <FIELD NAME="id"                TYPE="int"  LENGTH="10"  NOTNULL="true" SEQUENCE="true" />
+            <FIELD NAME="title"             TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" />
+            <FIELD NAME="description"       TYPE="text"              NOTNULL="true" SEQUENCE="false" />
+            <FIELD NAME="content"           TYPE="text"              NOTNULL="true" SEQUENCE="false" />
+            <FIELD NAME="img_content_url"   TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" />
+            <FIELD NAME="img_banner_url"    TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" />
+            <FIELD NAME="timecreated"       TYPE="int"  LENGTH="10"  NOTNULL="true" SEQUENCE="false" DEFAULT="0"/>
+            <FIELD NAME="timemodified"      TYPE="int"  LENGTH="10"  NOTNULL="true" SEQUENCE="false" DEFAULT="0"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="ID da notícia"/>
+        </KEYS>
+    </TABLE>
+  </TABLES>
