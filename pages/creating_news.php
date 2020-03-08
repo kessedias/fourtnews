@@ -10,6 +10,9 @@
  require_once(__DIR__.'/../../../config.php');
  require_once('../classes/forms.php');
 
+ //fazendo a chamada do namespace dentro de pages
+ use local_fourtnews\fourtnews;
+
  require_login();
 
  //Contexto definido para criação de capabilities
@@ -17,8 +20,8 @@
  $PAGE->set_context($context);
  $PAGE->set_url($CFG->wwwroot. '/local/fourtnews/pages/creating_news.php', []);
  $PAGE->set_pagelayout('admin');
- $PAGE->set_title('Criando Notícias');
- $PAGE->set_heading('Criando Notícias');
+ $PAGE->set_title(get_string('news_category', 'local_fourtnews'));
+ $PAGE->set_heading(get_string('create_news', 'local_fourtnews'));
 
  echo $OUTPUT->header();
 
@@ -36,8 +39,13 @@
 
      $mform->display();
      $out = html_writer::start_tag('div', ['id' => 'alert', 'class' => 'alert alert-success']);
-     $out .= html_writer::tag('p', 'Notícia criada com sucesso');
+     $out .= html_writer::tag('p', (get_string('news_success_message', 'local_fourtnews')));
      $out .= html_writer::end_tag('div');
+
+    
+     var_dump('<pre>');
+     var_dump($data->txt_title);
+     var_dump('</pre>');
  }else{
      $mform->display(); //exibe os elementos na tela
  }
