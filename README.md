@@ -19,7 +19,7 @@ desenvolvedores <a href="https://github.com/Hugo438" alt="GitHub Hugo Santos">Hu
 <ul>
 <li>Estrutura padrão ✔️</li>
 <li>Banco de dados ✔️</li>
-<li>Formulários</li>
+<li>Formulários ✔️</li>
 <li>Visualização de notícias</li>
 <li>CRUD</li>
 <li>Filtros de busca</li>
