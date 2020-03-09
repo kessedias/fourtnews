@@ -9,10 +9,10 @@
 
  require_once(__DIR__.'/../../../config.php');
  require_once('../classes/forms.php');
-
+ require_once('../classes/fourtnews.php');
  //fazendo a chamada do namespace dentro de pages
- use local_fourtnews\fourtnews;
-
+ //use local_fourtnews\fourtnews;
+ //use local_fourtnews\forms;
  require_login();
 
  //Contexto definido para criação de capabilities
@@ -34,22 +34,34 @@
 
     //quando eu dou o submiy, ele cria um objeto e manda o get_data
  }else if($data = $mform->get_data()){
-     //chama o global session que tem como objetivo, gerenciar a sessão do moodle
-     GLOBAL $_SESSION;
 
      $mform->display();
-     $out = html_writer::start_tag('div', ['id' => 'alert', 'class' => 'alert alert-success']);
-     $out .= html_writer::tag('p', (get_string('news_success_message', 'local_fourtnews')));
-     $out .= html_writer::end_tag('div');
-
-    
      var_dump('<pre>');
-     var_dump($data->txt_title);
+     var_dump($data);
      var_dump('</pre>');
+     //var_dump($news);
+     //instância da classe de notas
+     $news = new News($data->id, $data->txt_title, $data->txta_desc, $data->txta_content, $data->source_img, $data->banner_img);
+     $response = $news->insert_news();
+     
+   
+     
+     if($response){
+        $out = html_writer::start_tag('div', ['id' => 'alert_s', 'class' => 'alert alert-success']);
+        $out .= html_writer::tag('p', (get_string('news_success_message', 'local_fourtnews')));
+        $out .= html_writer::end_tag('div');
+        echo $out;
+     }else{
+        $out  = html_writer::start_tag('div', ['id' => 'alert_d', 'class' => 'alert alert-danger']);
+        $out .= html_writer::tag('p', 'Deu muito errado isso ai');
+        $out .= html_writer::end_tag('div');
+        echo $out;
+     }
+    
  }else{
      $mform->display(); //exibe os elementos na tela
  }
 
- echo $out;
+
 
  echo $OUTPUT->footer();

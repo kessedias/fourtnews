@@ -29,8 +29,8 @@ class news_forms extends moodleform{
         $mform->addElement('text', 'txt_title', get_string('news_title', 'local_fourtnews'), ['placeholder' => get_string('news_title_placeholder', 'local_fourtnews'), 'size' => 48]);
         $mform->addElement('textarea', 'txta_desc', get_string('news_description', 'local_fourtnews'), ['placeholder' => get_string('news_description_placeholder', 'local_fourtnews'), 'cols' => 50, 'rows' => 3]);
         $mform->addElement('textarea', 'txta_content', get_string('news_content', 'local_fourtnews'), ['placeholder' => get_string('news_content_placeholder', 'local_fourtnews'), 'cols' => 50, 'rows' => 5]);
-        $mform->addElement('text', 'sourceimg', get_string('news_content', 'local_fourtnews'), ['placeholder' => get_string('news_image_placeholder', 'local_fourtnews'), 'size' => 48]);
-        $mform->addElement('text', 'bannerimg', get_string('news_banner', 'local_fourtnews'), ['placeholder' => get_string('news_banner_placeholder', 'local_fourtnews'), 'size' => 48]);
+        $mform->addElement('text', 'source_img', get_string('news_content', 'local_fourtnews'), ['placeholder' => get_string('news_image_placeholder', 'local_fourtnews'), 'size' => 48]);
+        $mform->addElement('text', 'banner_img', get_string('news_banner', 'local_fourtnews'), ['placeholder' => get_string('news_banner_placeholder', 'local_fourtnews'), 'size' => 48]);
 
         //definindo os tipos
         $mform->setType('head_guide',PARAM_TEXT);
@@ -44,12 +44,12 @@ class news_forms extends moodleform{
         $mform->addRule('txt_title', get_string('news_required_title', 'local_fourtnews'), 'required', 'server');
         $mform->addRule('txta_desc', get_string('news_required_desc', 'local_fourtnews'), 'required', 'server');
         $mform->addRule('txta_content', get_string('news_required_content', 'local_fourtnews'), 'required', 'server');
-        $mform->addRule('sourceimg', get_string('news_required_source_img', 'local_fourtnews'), 'required', 'server');
-        $mform->addRule('bannerimg', get_string('news_required_banner_img', 'local_fourtnews'), 'required', 'server');
+        $mform->addRule('source_img', get_string('news_required_source_img', 'local_fourtnews'), 'required', 'server');
+        $mform->addRule('banner_img', get_string('news_required_banner_img', 'local_fourtnews'), 'required', 'server');
 
         //Definindo os helpers
-        $mform->addHelpButton('sourceimg', 'news_sourceimg', 'local_moodlenews');
-        $mform->addHelpButton('bannerimg', 'news_bannerimg', 'local_moodlenews');
+        $mform->addHelpButton('source_img', 'news_sourceimg', 'local_moodlenews');
+        $mform->addHelpButton('banner_img', 'news_bannerimg', 'local_moodlenews');
 
         //botão de ação moodle
         $this->add_action_buttons(true, 'Criar notícia');

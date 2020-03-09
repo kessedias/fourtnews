@@ -7,24 +7,24 @@
  * @author 2020, Kesse Dias <kesse@eadskill.com.br>
  */
 
- namespace local_fourtnews;
+ //namespace local_fourtnews;
 
  class News {
      private $id;
      private $title;
      private $description;
      private $content;
-     private $sourceimg;
-     private $bannerimg;
+     private $img_content_url;
+     private $img_banner_url;
 
      //construtor
-     public function __construct($id = null, $title = null, $description = null, $content = null, $sourceimg = null, $bannerimg = null){
-         $this->id          = $id;
-         $this->title       = $title;
-         $this->content     = $description;
-         $this->description = $content;
-         $this->sourceimg   = $sourceimg;
-         $this->bannerimg   = $bannerimg;
+     public function __construct($id, $title, $description, $content, $img_content_url, $img_banner_url){
+         $this->id                  = $id;
+         $this->title               = $title;
+         $this->content             = $content;
+         $this->description         = $description;
+         $this->img_content_url     = $img_content_url;
+         $this->img_banner_url      = $img_banner_url;
      }
 
      //Getters -> funções de acesso
@@ -44,12 +44,12 @@
         return $this->$content;
     }
 
-    public function get_sourceimg(){
-        return $this->$id;
+    public function get_img_content_url(){
+        return $this->$img_content_url;
     }
 
-    public function get_bannerimg(){
-        return $this->$id;
+    public function get_img_banner_url(){
+        return $this->$img_banner_url;
     }
 
     //Setters -> funções de atribuição de valores
@@ -62,19 +62,19 @@
     }
 
     public function set_description($description){
-        return $this->descrpition = $description;
+        return $this->description = $description;
     }
 
     public function set_content($content){
         return $this->content = $content;
     }
 
-    public function set_sourceimg($sourceimg){
-        return $this->sourceimg = $sourceimg;
+    public function set_img_content_url($img_content_url){
+        return $this->img_content_url = $img_content_url;
     }
 
-    public function set_bannerimg($bannerimg){
-        return $this->bannerimg = $bannerimg;
+    public function set_img_banner_url($img_banner_url){
+        return $this->img_banner_url = $img_banner_url;
     }
 
     //método de inserção de notícia - INSERT
@@ -82,11 +82,11 @@
         GLOBAL $DB;
         
         $news = (object)[
-            'title'         =>$this->get_title(),
-            'description'   =>$this->get_description(),
-            'content'       =>$this->get_content(),
-            'sourceimg'     =>$this->get_sourceimg(),
-            'bannerimg'     =>$this->get_bannerimg(),
+            'title'            =>$this->get_title(),
+            'description'      =>$this->get_description(),
+            'content'          =>$this->get_content(),
+            'img_content_url'  =>$this->get_img_content_url(),
+            'img_banner_url'   =>$this->get_img_banner_url(),
         ];
 
         $id = $DB->insert_record('fourtnews', $news);
