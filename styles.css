@@ -1,0 +1,28 @@
+h1{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* p{
+    margin-bottom: 50px !important;
+} */
+
+.img-test{
+   margin-top: 50px !important;
+}
+
+.btn-noclick{
+    background: url('https://image.flaticon.com/icons/svg/1828/1828961.svg');
+    height: 48px;
+    width: 45px;
+    
+    /* display: none; */
+}
+
+.btn-click{
+    background: url('http://imgur.com/I0EwG.png');
+    height: 48px;
+    width: 45px;
+    border: none;
+    /* display: none; */
+}
