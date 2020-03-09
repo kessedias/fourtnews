@@ -44,6 +44,8 @@ if ($mform->is_cancelled()) {
         $out .= html_writer::tag('p', (get_string('news_success_message', 'local_fourtnews')));
         $out .= html_writer::end_tag('div');
         echo $out;
+        $url = $CFG->wwwroot . '/local/fourtnews/pages/desc_news.php';
+        redirect($url);
     } else {
         $out = html_writer::start_tag('div', ['id' => 'alert_d', 'class' => 'alert alert-danger']);
         $out .= html_writer::tag('p', 'Deu muito errado isso ai');
