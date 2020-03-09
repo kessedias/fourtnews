@@ -20,12 +20,12 @@ desenvolvedores <a href="https://github.com/Hugo438" alt="GitHub Hugo Santos">Hu
 <li>Estrutura padrão ✔️</li>
 <li>Banco de dados ✔️</li>
 <li>Formulários ✔️</li>
-<li>Visualização de notícias</li>
+<li>Visualização de notícias ✔️</li>
 <li>CRUD</li>
 <li>Filtros de busca</li>
 <li>Relatórios</li>
 <li>Exportação de relatórios</li>
-<li><a href="https://thumbs.gfycat.com/SatisfiedIckyAmericanredsquirrel-size_restricted.gif">Extras</a></li>
+<li><a href="https://thumbs.gfycat.com/SatisfiedIckyAmericanredsquirrel-size_restricted.gif">Extras</a> ✔️</li>
 
 </ul>
 </p>
