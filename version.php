@@ -5,8 +5,8 @@
  * @package fourtnews
  */
 
- defined("MOODLE_INTERNAL") || die;
+defined("MOODLE_INTERNAL") || die;
 
- $plugin->component = "local_fourtnews";
- $plugin->version   = 2020030800;
- $plugin->requires  = 2018051710; //requer moodle 3.5
+$plugin->component = "local_fourtnews";
+$plugin->version = 2020030805;
+$plugin->requires = 2018051710; //requer moodle 3.5

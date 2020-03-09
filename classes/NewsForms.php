@@ -2,17 +2,20 @@
 
 /**
  * Plugin de noticias do moodle - Arquivo de formulários
- * 
+ *
  * @package local_fourtnews
  * @author 2020, Kesse Dias <kesse@eadskill.com.br>
  */
+namespace local_fourtnews;
 
-require_once("$CFG->libdir/formslib.php");
+require_once $CFG->libdir . '/formslib.php';
 
-class news_forms extends moodleform{
-   
+class NewsForms extends \moodleform
+{
+
     //adicionando elementos no formulário
-    public function definition(){
+    public function definition()
+    {
         global $CFG;
 
         //chamada do form
@@ -29,16 +32,16 @@ class news_forms extends moodleform{
         $mform->addElement('text', 'txt_title', get_string('news_title', 'local_fourtnews'), ['placeholder' => get_string('news_title_placeholder', 'local_fourtnews'), 'size' => 48]);
         $mform->addElement('textarea', 'txta_desc', get_string('news_description', 'local_fourtnews'), ['placeholder' => get_string('news_description_placeholder', 'local_fourtnews'), 'cols' => 50, 'rows' => 3]);
         $mform->addElement('textarea', 'txta_content', get_string('news_content', 'local_fourtnews'), ['placeholder' => get_string('news_content_placeholder', 'local_fourtnews'), 'cols' => 50, 'rows' => 5]);
-        $mform->addElement('text', 'source_img', get_string('news_content', 'local_fourtnews'), ['placeholder' => get_string('news_image_placeholder', 'local_fourtnews'), 'size' => 48]);
+        $mform->addElement('text', 'source_img', get_string('news_image', 'local_fourtnews'), ['placeholder' => get_string('news_image_placeholder', 'local_fourtnews'), 'size' => 48]);
         $mform->addElement('text', 'banner_img', get_string('news_banner', 'local_fourtnews'), ['placeholder' => get_string('news_banner_placeholder', 'local_fourtnews'), 'size' => 48]);
 
         //definindo os tipos
-        $mform->setType('head_guide',PARAM_TEXT);
-        $mform->setType('txt_title',PARAM_TEXT);
-        $mform->setType('txta_desc',PARAM_TEXT);
-        $mform->setType('txta_content',PARAM_TEXT);
-        $mform->setType('sourceimg',PARAM_TEXT);
-        $mform->setType('bannerimg',PARAM_TEXT);
+        $mform->setType('head_guide', PARAM_TEXT);
+        $mform->setType('txt_title', PARAM_TEXT);
+        $mform->setType('txta_desc', PARAM_TEXT);
+        $mform->setType('txta_content', PARAM_TEXT);
+        $mform->setType('sourceimg', PARAM_TEXT);
+        $mform->setType('bannerimg', PARAM_TEXT);
 
         //Adicionando regras
         $mform->addRule('txt_title', get_string('news_required_title', 'local_fourtnews'), 'required', 'server');
@@ -54,7 +57,5 @@ class news_forms extends moodleform{
         //botão de ação moodle
         $this->add_action_buttons(true, 'Criar notícia');
     }
-
-
 
 }
